@@ -6,20 +6,24 @@ HTML et CSS natifs, sans dépendance navigateur, police distante, suivi ou JavaS
 ## Aperçu local
 
 ```sh
-python3 -m http.server 4173 --directory public
+python3 -m http.server 4173
 ```
 
-Ouvrir http://localhost:4173. Le dossier `public/` constitue le site complet à héberger.
+Ouvrir http://localhost:4173. Le site se compose de `index.html`, `styles.css`, `robots.txt`, `sitemap.xml` et du dossier `assets/`, à la racine du dépôt.
 
 ## Publication
 
 Le remote SSH est `git@github.com:BayDeck-Team/taquinElegance.git`.
-Le workflow `.github/workflows/pages.yml` publie `public/` après un push sur `main`.
-Dans GitHub, sélectionner **Settings → Pages → Source → GitHub Actions** avant le premier déploiement.
+Le site fonctionne avec les deux modes de publication GitHub Pages :
+
+- **Deploy from a branch** : sélectionner la branche `main` et le dossier `/ (root)`. Le fichier `index.html` à la racine devient la page d’accueil. `.nojekyll` désactive le traitement Jekyll.
+- **GitHub Actions** : le workflow `.github/workflows/pages.yml` prépare `_site/` avec uniquement les fichiers du site puis le publie après un push sur `main`. Dans **Settings → Environments → github-pages**, autoriser la branche `main` si une restriction de branches est configurée.
+
+Si le README apparaît sur le site, vérifier que le dernier déploiement contient bien le fichier `index.html` et qu’il a terminé avec succès.
 
 URL configurée par défaut : https://baydeck-team.github.io/taquinElegance/
-En cas de domaine personnalisé, remplacer cette URL dans `public/index.html`
-(canonical, Open Graph, Twitter et données structurées), `public/robots.txt` et `public/sitemap.xml`.
+En cas de domaine personnalisé, remplacer cette URL dans `index.html`
+(canonical, Open Graph, Twitter et données structurées), `robots.txt` et `sitemap.xml`.
 
 ## Contenu à finaliser
 
@@ -29,7 +33,7 @@ En cas de domaine personnalisé, remplacer cette URL dans `public/index.html`
 
 ## Images
 
-Les PNG à la racine sont les originaux. Seules les versions optimisées dans `public/assets/` sont publiées.
+Les PNG à la racine sont les originaux. La page utilise uniquement les versions optimisées dans `assets/`. Le workflow GitHub Actions exclut les originaux de son artefact de publication.
 Les recadrages isolent les appareils pour la présentation. Pour les régénérer :
 
 ```sh

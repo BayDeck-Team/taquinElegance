@@ -7,7 +7,7 @@ from pathlib import Path
 from PIL import Image, ImageOps
 
 ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = ROOT / "public" / "assets"
+OUTPUT = ROOT / "assets"
 
 
 def export(image, name, width, quality=83):
