@@ -21,6 +21,8 @@ Ouvrir http://localhost:4173 pour l’anglais ou http://localhost:4173/fr/ pour 
 
 ## Publication
 
+La politique de confidentialité de l’application est disponible en anglais sous `/privacy/` et en français sous `/fr/privacy/`, avec des liens dans le pied de page. Elle indique, conformément à la déclaration de l’éditeur, qu’aucune donnée n’est collectée et que les informations restent localement dans l’application sur l’appareil.
+
 Le remote SSH est `git@github.com:BayDeck-Team/taquinElegance.git`.
 Le site fonctionne avec les deux modes de publication GitHub Pages :
 
