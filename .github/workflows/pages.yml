@@ -28,6 +28,7 @@ jobs:
           mkdir -p _site
           cp index.html styles.css robots.txt sitemap.xml .nojekyll _site/
           cp -R assets _site/assets
+          cp -R fr _site/fr
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

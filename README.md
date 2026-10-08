@@ -1,6 +1,6 @@
 # Taquin Élégance — page de présentation
 
-Site statique en français pour présenter le jeu de taquin sur iPhone et iPad.
+Site statique bilingue pour présenter le jeu de taquin sur iPhone et iPad : anglais par défaut, français sous `/fr/`.
 HTML et CSS natifs, sans dépendance navigateur, police distante, suivi ou JavaScript applicatif.
 
 ## Aperçu local
@@ -9,7 +9,15 @@ HTML et CSS natifs, sans dépendance navigateur, police distante, suivi ou JavaS
 python3 -m http.server 4173
 ```
 
-Ouvrir http://localhost:4173. Le site se compose de `index.html`, `styles.css`, `robots.txt`, `sitemap.xml` et du dossier `assets/`, à la racine du dépôt.
+Ouvrir http://localhost:4173 pour l’anglais ou http://localhost:4173/fr/ pour le français. Le site se compose de `index.html`, `fr/index.html`, `styles.css`, `robots.txt`, `sitemap.xml` et du dossier `assets/`, à la racine du dépôt.
+
+## Langues
+
+- Anglais (défaut) : https://baydeck-team.github.io/taquinElegance/
+- Français : https://baydeck-team.github.io/taquinElegance/fr/
+- Sélecteur EN / FR dans l’en-tête, accessible au clavier et visible sur mobile. Les liens sont relatifs au site pour fonctionner sur GitHub Pages et en local.
+- Les pages sont intégralement statiques, avec traductions des contenus, textes alternatifs, libellés accessibles et métadonnées. Chaque page a son canonical et les mêmes liens réciproques `hreflang` (`en`, `fr`, `x-default`).
+- Les ressources CSS et images sont communes aux deux langues ; le français les référence via `../`.
 
 ## Publication
 
@@ -22,7 +30,7 @@ Le site fonctionne avec les deux modes de publication GitHub Pages :
 Si le README apparaît sur le site, vérifier que le dernier déploiement contient bien le fichier `index.html` et qu’il a terminé avec succès.
 
 URL configurée par défaut : https://baydeck-team.github.io/taquinElegance/
-En cas de domaine personnalisé, remplacer cette URL dans `index.html`
+En cas de domaine personnalisé, remplacer cette URL dans `index.html` et `fr/index.html`
 (canonical, Open Graph, Twitter et données structurées), `robots.txt` et `sitemap.xml`.
 
 ## Contenu à finaliser
@@ -45,7 +53,7 @@ Pillow est seulement nécessaire à la régénération des images, pas au déplo
 
 ## SEO, accessibilité et performance
 
-- HTML sémantique, un H1, texte indexable, langue française et FAQ native.
+- HTML sémantique, un H1 par page, texte indexable, langue explicite (`en` ou `fr`) et FAQ native.
 - Titre, description, canonical, Open Graph, Twitter Card, données structurées SoftwareApplication, robots et sitemap.
 - WebP responsive, dimensions explicites, priorité à l’image du hero, chargement différé des autres visuels.
 - Polices système, aucun appel tiers et aucun script exécuté.
