@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://baydeck-team.github.io/taquinElegance/sitemap.xml
